@@ -1,0 +1,11 @@
+Name: <%- title %>
+Byline: by <%- author %>
+HtmlByline: by <a href="mailto:<%- email %>"> <%- author %></a>
+AuthorEmail: <%- author %> <%- email %>
+Desc: <%- desc %>
+HtmlDesc: <%- htmldesc %>
+Version: 1
+ReleaseDate: TBA
+LicenseType: Freeware
+CopyingRules: Nominal cost only; compilations allowed
+PresentationProfile: Default
