@@ -13,18 +13,24 @@
 # generator-tads you can get the latest version from
 # https://github.com/anthonyirwin82/generator-tads
 
+# To compile the web version run t3make -f Makefile-web
+
+# To test the web version run the following command:
+# frob -i plain -s 44 -N 00 -p <%- name %>-web.t3
+
 -we
 -D TADS_INCLUDE_NET
 -D LANGUAGE=english
 -Fy obj
 -Fo obj
 -v
+-o <%- name %>-web
 
 ##sources
 -lib system
 -lib webui
 -source tadsnet
--lib <%- libpath %>/adv3Lite/adv3Lite
+-lib <%- libpath %>/adv3Lite/adv3LiteWeb
 -source <%- name %>
 
 -res

@@ -14,7 +14,7 @@
 # https://github.com/anthonyirwin82/generator-tads
 
 # The -we option is not in the standard template file and was added
-# so that you can do t3make -f <%- name %> && frob <%- name %>
+# so that you can do t3make && frob <%- name %>
 # this will treat Warnings as Errors and will only run the 
 # frob interpreter if there are no compile Warnings and no Errors.
 

@@ -25,16 +25,8 @@ module.exports = class extends Generator {
               value: 'adv3'
             },
             {
-              name: 'adv3 Web Application',
-              value: 'adv3web'
-            }, 
-            {
               name: 'adv3Lite Application',
               value: 'adv3lite'
-            },
-            {
-              name: 'adv3Lite Web Application',
-              value: 'adv3liteweb'
             }
         ]
       },
@@ -92,23 +84,6 @@ module.exports = class extends Generator {
   }
 
   writing() {
-    // Files used by all projects
-    this.fs.copyTpl(
-      this.templatePath('blank.tdbconfig'),
-      this.destinationPath(this.props.name + '.tdbconfig')
-    );
-
-    this.fs.copyTpl(
-      this.templatePath('GameInfo.txt'),
-      this.destinationPath('GameInfo.txt'),
-      {
-        title: this.props.title,
-        author: this.props.author,
-        email: this.props.email,
-        desc: this.props.desc,
-        htmldesc: this.props.htmldesc  
-      }
-    );
 
     // Create the required directories
     mkdirp(this.destinationPath('debug'));
@@ -136,32 +111,15 @@ module.exports = class extends Generator {
 
       this.fs.copyTpl(
         this.templatePath('adv3/adv3.t3m'),
-        this.destinationPath(this.props.name + '.t3m'),
+        this.destinationPath('Makefile.t3m'),
         {
           name: this.props.name
-        }
-      );
-    }
-
-    // adv3 web Project Files
-    else if (this.props.projecttype == 'adv3web') {
-      this.fs.copyTpl(
-        this.templatePath('adv3web/adv3web.t'),
-        this.destinationPath(this.props.name + '.t'),
-        {
-          name: this.props.name,
-          title: this.props.title,
-          author: this.props.author,
-          email: this.props.email,
-          desc: this.props.desc,
-          htmldesc: this.props.htmldesc,
-          ifid: this.props.ifid  
         }
       );
 
       this.fs.copyTpl(
         this.templatePath('adv3web/adv3web.t3m'),
-        this.destinationPath(this.props.name + '.t3m'),
+        this.destinationPath('Makefile-web.t3m'),
         {
           name: this.props.name
         }
@@ -186,40 +144,22 @@ module.exports = class extends Generator {
 
       this.fs.copyTpl(
         this.templatePath('adv3Lite/adv3Lite.t3m'),
-        this.destinationPath(this.props.name + '.t3m'),
+        this.destinationPath('Makefile.t3m'),
         {
           name: this.props.name,
           libpath: this.props.libpath
-        }
-      );
-    }
-
-    // adv3Lite web Project Files
-    else if (this.props.projecttype == 'adv3liteweb') {
-      this.fs.copyTpl(
-        this.templatePath('adv3Liteweb/adv3Liteweb.t'),
-        this.destinationPath(this.props.name + '.t'),
-        {
-          name: this.props.name,
-          title: this.props.title,
-          author: this.props.author,
-          email: this.props.email,
-          desc: this.props.desc,
-          htmldesc: this.props.htmldesc,
-          ifid: this.props.ifid  
         }
       );
 
       this.fs.copyTpl(
         this.templatePath('adv3Liteweb/adv3Liteweb.t3m'),
-        this.destinationPath(this.props.name + '.t3m'),
+        this.destinationPath('Makefile-web.t3m'),
         {
           name: this.props.name,
           libpath: this.props.libpath
         }
       );
-    }
-    
+    } 
   }
 
   /*
