@@ -25,7 +25,7 @@
 -Fy obj
 -Fo obj
 -v
--o <%- name %>-web
+-o <%- name %>-web.t3
 
 ##sources
 -lib system

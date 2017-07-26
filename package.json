@@ -1,6 +1,6 @@
 {
   "name": "generator-tads",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Automatically generate adv3 or adv3Lite project files with project details automatically filled in.",
   "homepage": "https://www.anthonyirwin.com/generator-tads",
   "author": {
