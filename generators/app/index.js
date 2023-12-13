@@ -1,15 +1,16 @@
 'use strict';
+import Generator from "yeoman-generator";
+import chalk from "chalk";
+import yosay from "yosay";
+import { mkdirp } from "mkdirp";
+export default class extends Generator {
+  constructor(args, opts) {
+    // Calling the super constructor is important so our generator is correctly set up
+    super(args, opts);
+  }
 
-// Add ability to create directories
-var mkdirp = require('mkdirp');
-
-const Generator = require('yeoman-generator');
-const chalk = require('chalk');
-const yosay = require('yosay');
-
-module.exports = class extends Generator {
   prompting() {
-    // Have Yeoman greet the user.
+    //Have Yeoman greet the user.
     this.log(yosay(
       'Welcome to the wonderful ' + chalk.red('tads') + ' generator!'
     ));
@@ -161,10 +162,4 @@ module.exports = class extends Generator {
       );
     } 
   }
-
-  /*
-  install() {
-    this.installDependencies();
-  }
-  */
 };
